@@ -3,6 +3,7 @@ import { Stack, Box, Typography } from "@mui/material";
 import SideBar from "./SideBar";
 import { Videos } from "../index";
 import { fetchData } from "../../util/FetchApi";
+import { Helmet } from "react-helmet";
 
 function Feed() {
   // SetCategory and Change
@@ -17,6 +18,9 @@ function Feed() {
 
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" }, position: "relative" }}>
+      <Helmet>
+        <title>Home Page</title>
+      </Helmet>
       <Box
         sx={{
           height: { sx: "auto", md: "100vh" },

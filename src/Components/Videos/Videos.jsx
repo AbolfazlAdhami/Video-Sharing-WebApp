@@ -9,7 +9,7 @@ function Videos({ videos }) {
   if (videos == undefined) {
   } else {
     content = (
-      <Grid container spacing={2} sx={{ placeContent: "center", overflowY: "auto" }}>
+      <Grid container spacing={2} px={1} sx={{ placeContent: "center", overflowY: "auto" }}>
         {videos.map((video) => (
           <Grid item width={"100%"} lg={3} md={4} sm={6} sx={12} key={video.id.videoId}>
             <VideoBox video={video} />

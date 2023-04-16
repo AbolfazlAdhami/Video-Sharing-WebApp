@@ -43,3 +43,23 @@ export const fetchChannelData = async (channelId) => {
 
   if (status == 200) return data;
 };
+
+export const fetchChannelVideo = async (id) => {
+  const options = {
+    method: "GET",
+    url: "https://youtube-v31.p.rapidapi.com/search",
+    params: {
+      channelId: id,
+      part: "snippet,id",
+      order: "date",
+      maxResults: "50",
+    },
+    headers: {
+      "X-RapidAPI-Key": "5365562dc8msh06f2cc3162c0280p1fdfe0jsn6f7d79da7344",
+      "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
+    },
+  };
+
+  const { data, status } = await axios.request(options);
+  if (status == 200) return [...data.items];
+};

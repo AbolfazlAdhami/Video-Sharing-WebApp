@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const ChannelHeader = ({ info }) => {
   const { brandingSettings, snippet, statistics } = info;
-  console.log(info);
+  // console.log(info);
   const SubBtn = styled(Button)({
     backgroundColor: "#fc1503",
     color: "#fff",
@@ -22,7 +22,7 @@ const ChannelHeader = ({ info }) => {
   });
 
   return (
-    <Stack direction={"column"}>
+    <Stack direction={"column"} mb={3}>
       {/* Poster */}
       <Box>
         <img src={brandingSettings.image?.bannerExternalUrl} style={{ width: "100%", height: "250px", objectFit: "cover", objectPosition: "center center" }} />
