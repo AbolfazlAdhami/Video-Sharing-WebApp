@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import { Channel, Feed, Navbar, SearchFeed, VideoDetails } from "./Components";
+import { Box } from "@mui/material";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ backgroundColor: "#353b48", width: "100%", minHeight: "100vh" }}>
+      <Navbar />
+      <Routes>
+        <Route path="/" index element={<Feed />} />
+        <Route path="/channel/:id" element={<Channel />} />
+        <Route path="/videoDetails/:id" element={<VideoDetails />} />
+        <Route path="/searchFeed/:query" element={<SearchFeed />} />
+      </Routes>
+    </Box>
   );
 }
 
