@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { IconButton, Paper } from "@mui/material";
 import { Search } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 function SearchInput() {
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
   const handelSubmit = (e) => {
     e.preventDefault();
+    navigate(`/searchFeed/${search}`);
+    setSearch("");
   };
 
   return (

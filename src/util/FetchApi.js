@@ -13,7 +13,7 @@ export const fetchData = async (query, method, maxResult = 40) => {
     params: {
       q: query,
       part: "snippet,id",
-      regionCode: "US",
+      regionCode: "IR",
       maxResults: maxResult,
       order: "date",
     },
@@ -55,7 +55,7 @@ export const fetchChannelVideo = async (id) => {
       maxResults: "50",
     },
     headers: {
-      "X-RapidAPI-Key": "5365562dc8msh06f2cc3162c0280p1fdfe0jsn6f7d79da7344",
+      "X-RapidAPI-Key": process.env.React_App_Api_Key,
       "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
     },
   };
