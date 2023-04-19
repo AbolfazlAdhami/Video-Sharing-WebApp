@@ -36,6 +36,13 @@ function VideoBox({ video }) {
             <CheckCircle sx={{ fontSize: 15, color: "#fc1503", ml: "5px" }} />
           </Typography>
         </Link>
+        <Typography variant="caption" color={"#dcdde1"}>
+          {new Date().getFullYear() - snippet?.publishedAt.slice(0, 4) > 1
+            ? new Date().getFullYear() - snippet?.publishedAt.slice(0, 4) + " Year Ago"
+            : new Date().getMonth() - snippet?.publishedAt.slice(5, 7) > 1
+            ? new Date().getMonth() - snippet?.publishedAt.slice(5, 7) + " Month Ago"
+            : -(new Date().getDay() - snippet?.publishedAt.slice(8, 10)) + " Days Ago"}
+        </Typography>
       </CardContent>
     </Card>
   );

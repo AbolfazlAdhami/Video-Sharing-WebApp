@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Videos from "../Videos/Videos";
+import { Helmet } from "react-helmet";
 
 function SearchFeed() {
   const { query } = useParams();
@@ -35,6 +36,9 @@ function SearchFeed() {
 
   return (
     <Box p={2} minHeight={"95vh"}>
+      <Helmet>
+        <title>Search...</title>
+      </Helmet>
       <Typography textAlign={"start"} variant="h5" fontWeight={800} color="#fff" mb={3} ml={{ sm: "100px" }}>
         Search Results for <span style={{ color: "#fc1503" }}>{query}</span> Videos
       </Typography>

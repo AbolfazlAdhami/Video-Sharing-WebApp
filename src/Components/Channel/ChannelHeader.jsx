@@ -21,6 +21,7 @@ const ChannelHeader = ({ info }) => {
     },
   });
 
+  console.log(brandingSettings.channel?.description);
   return (
     <Stack direction={"column"} mb={3}>
       {/* Poster */}
@@ -37,7 +38,7 @@ const ChannelHeader = ({ info }) => {
             <CheckCircle sx={{ fontSize: 15, color: "#fc1503", ml: "5px" }} />
           </Typography>
           <Typography variant="caption" color={"#dcdde1"}>
-            {brandingSettings.channel.description.slice(0, 100)}
+            {brandingSettings.channel?.description?.slice(0, 50)}
           </Typography>
           <Box display={"flex"} gap={1}>
             <Typography color={"#fff"} variant="subtitle2" textAlign={"center"}>

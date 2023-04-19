@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useDebugValue, useDeferredValue, useEffect, useState } from "react";
 import { Stack, Box, Typography } from "@mui/material";
 import SideBar from "./SideBar";
 import { Videos } from "../index";
@@ -9,12 +9,12 @@ function Feed() {
   // SetCategory and Change
   const [selectedCategory, setSelectedCategory] = useState("Coding");
   const changeSelected = (name) => setSelectedCategory(name);
-
   const [videos, setVideo] = useState(null);
-
+  const deferredVideos = useDebugValue(videos);
+  const deferreCategory = useDeferredValue(selectedCategory);
   useEffect(() => {
     fetchData(selectedCategory, "GET", 100).then((data) => setVideo([...data.items]));
-  }, [selectedCategory]);
+  }, [deferreCategory, selectedCategory]);
 
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" }, position: "relative" }}>
